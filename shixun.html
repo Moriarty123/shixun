@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首页</title>
+</head>
+<body>
+
+<style>
+	* {
+		margin: 0px;
+		padding: 0px;
+	}
+
+	body {
+		background: rgb(245,248,250);
+	}
+
+	.showBorder {
+		/*border: solid 1px blue;*/
+	}
+
+	.center {
+		margin: 0 auto;
+	}
+
+	.menu {
+
+		width: 100%;
+		height: 20%;
+		margin-top: 20px;
+	}
+
+	.menu ul {
+		list-style: none;
+	}
+
+	.menu ul li {
+		float: left;
+		margin-left: 20px;
+		/*margin-right: 5px;*/
+		font-size: 11px;
+	}
+
+	.relative {
+		position: relative;
+		top: 0px;
+		left: 0px;
+	}
+
+	.absolute {
+		position: absolute;
+		bottom: 0px;
+	}
+
+	.news {
+		width: 100%;
+		height: 20%;
+		background: rgb(241,245,248);
+	}
+
+	.news ul {
+		margin-top: 5%;
+		/*margin-left: 5%;*/
+		list-style: circle;
+		float: left;
+	}
+
+	.news ul hr {
+		border:1px dashed; margin-top: 5px; opacity: 0.5; width: 275px;
+	}
+
+	.news ul li {
+		font-size: 11px;
+		margin-top: 15px;
+		margin-left: 20px;
+	}
+
+	.graybackground {
+		width: 100%; height: 60%; background: rgb(241,245,248);
+	}
+
+	.footer {
+
+	}
+
+	.footer ul {
+		margin-top:7%;
+
+		list-style: none;
+	}
+
+	.footer ul li {
+		float: left;
+		margin-left: 5px;
+		margin-right: 5px;
+		font-size: 11px;
+	}
+
+</style>
+	
+<div style="width:1000px; height: 1000px;" class="showBorder center">
+	<div style="height: 10%;" class="showBorder center">
+		<div style="width: 20%;height: 100%; margin-left: 5%; float: left;" class="showBorder">
+			<img src="pictures/logo.png" style="width: 100%">
+		</div>
+		<div style="width: 65%;height: 100%; margin-left: 5%; float: left;" class="showBorder">
+			<div style="width: 100%; height: 50%;" class="showBorder">
+				<div style="float: right; margin-top: 5%;">
+					<img src="pictures/phone.jpg">
+					<font style="color: red"><strong>咨询热线：0755-36981900</strong></font>
+				</div>
+			</div>
+			<div>
+				<div class="menu">
+					<ul>
+						<li>网站首页</li>
+						<li>关于我们</li>
+						<li>服务项目</li>
+						<li>设备展示</li>
+						<li>服务案例</li>
+						<li>新闻中心</li>
+						<li>清洁知识</li>
+						<li>在线留言</li>
+						<li>联系我们</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div style="height: auto;" class="showBorder center" class="relative">
+		<div class="relative">
+			<img src="pictures/show.jpg" style="width: 100%; vertical-align:middle;" >
+			<div style="width: 100%; height: 50px; background: #000; opacity: 0.2;" class="absolute"></div>
+		</div>
+
+	</div>
+	<div style="height: 50%" class="showBorder center">
+		<div style="width: 90%; height: 80%; margin-top: 5%;" class="showBorder center">
+			<div style="width: 32%; height: 95%; float: left;" class="showBorder" >
+				<div style="width: 49%;float: left;margin-bottom: 1%;">
+					<img src="pictures/p01.jpg" style="width: 100%;">
+				</div>
+				<div style="width: 49%;float: right;margin-bottom: 1%;">
+					<img src="pictures/p02.jpg" style="width: 100%;">
+				</div>
+				<div style="width: 49%;float: left;">
+					<img src="pictures/p03.jpg" style="width: 100%;">
+				</div>
+				<div style="width: 49%;float: right;">
+					<img src="pictures/p04.jpg" style="width: 100%;">
+				</div>
+			</div>
+			<div style="width: 32%; height: 95%; float: left;margin-left: 15px;" class="showBorder relative" >
+				<div class="graybackground">
+					<div style="margin-left: 2%; ">
+						<font style="font-size: 40px; float: left;"><strong>N</strong></font>
+						<div style="width: 70px; float: left;"><font>推荐新闻ews</font></div>
+						<div>
+							<font style="font-size: 40px; float: right; opacity: 0.5"><strong>+</strong></font>
+						</div>
+					</div>
+					<div class="news">
+						<ul>
+							<li>"下水道已疏通，公交车仍难等"</li>
+							<hr />
+							<li>"市排水公司义务疏通一街道污水管道网"</li>
+							<hr />
+							<li>"住户：下水道已堵塞 物业：会派人疏通"</li>
+							<hr />
+							<li>"玉带新村松街路下水道堵塞数月急盼疏通"</li>
+							<hr />
+						</ul>
+					</div>
+				</div>
+				<div>
+					<img src="pictures/news.jpg" style="width: 100%;" class="absolute">
+				</div>
+			</div>
+			<div style="width: 32%; height: 95%; float: right;" class="showBorder relative" >
+				<div class="graybackground">
+					<div style="margin-left: 2%; ">
+						<font style="font-size: 40px; float: left;"><strong>A</strong></font>
+						<div style="width: 70px; float: left;"><font>关于我们ount us</font></div>
+						<div>
+							<font style="font-size: 40px; float: right; opacity: 0.5"><strong>+</strong></font>
+						</div>
+					</div>
+					<div class="infomation">
+						<div style="clear:both; float: left;width: 40%; ">
+							<img src="pictures/company.jpg" style="width:100%;">
+						</div >
+						<div style="width: 53%; float: right;">
+							<p>
+								华为是全球领先的ICT（信息与通信）基础设施和智能终端提供商，致力于把数字世界带入每个人、每个家庭、每个组织，构建万物互联的智能世界。
+							</p>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="absolute graybackground" style="width: 100%; height: 31%;">
+					<div style="font-size: 11px;">
+						<div style="margin-top: 5px; margin-left: 5px; color: rgb(61,160, 201);">
+							<font>联系我们</font>
+						</div>
+						<div style="margin-top: 5px; margin-left: 5px;">
+							<img src="pictures/address.jpg">&nbsp;
+							地址：&nbsp;深圳市南山镇前海路卡夫诺大厦18F
+						</div>
+						<div style="margin-top: 5px; margin-left: 5px;">
+							<img src="pictures/phone.jpg">
+							热线电话：&nbsp;0755-36981900
+						</div>
+						<div style="margin-top: 5px; margin-left: 5px;">
+							<img src="pictures/phone.jpg">
+							24小时值电话：&nbsp;13715255122
+						</div>
+					</div>
+				</div> 
+			</div>
+		</div>
+	</div>
+	<div style="height: 10%; background: rgb(51,51,51);" class="showBorder center">
+
+		<div class="showBorder" style="width: 35%; height: 100%;float: left; margin-left: 5%">
+			<div class="showBorder" style="width: 100%; height: 49%; margin-top: 5%;" >
+				<font style="font-size: 10px; text-align: center;color: #939799;">
+				深圳市益万家环保清洁服务有限公司 粤ICP备16113711号
+				</font>
+			</div>
+			<div class="showBorder" style="width: 100%; height: 49%;" class="center">
+				<font style="font-size: 10px;color: #939799;text-align: center;" class="center">
+				建站单位：腾宇科技 最优网络
+				</font>
+
+			</div>
+		</div>
+		<div class="showBorder footer" style="width: 59%; height: 100%;float: right;color: #939799;">
+			
+			<ul>
+				<li>网站首页</li>
+				<li>关于我们</li>
+				<li>服务项目</li>
+				<li>设备展示</li>
+				<li>服务案例</li>
+				<li>新闻中心</li>
+				<li>清洁知识</li>
+				<li>在线留言</li>
+				<li>联系我们</li>
+			</ul>
+
+		</div>
+
+
+	</div>
+</div>    
+
+
+
+</body>
+</html>
