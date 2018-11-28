@@ -61,7 +61,7 @@ ul, li, a{
 }
 
 .circle-frame {
-	width: 100%;
+	width: 90%;
 	height: auto;
 }
 
@@ -73,13 +73,21 @@ ul, li, a{
 
 .title-body {
 	width: 90%;
-	height: 80px;
+	height: 100px;
 	text-align: center;
 	margin: 0 auto;
 	/*vertical-align: middle;*/
 }
 
 .icon-lightbulb {
+	margin-top: 20px;
+	color: rgb(0, 134,218);
+	font-size: 36px;
+	vertical-align: sub;
+	margin-right:5px; 
+}
+
+.icon-briefcase-medical {
 	margin-top: 20px;
 	color: rgb(0, 134,218);
 	font-size: 36px;
@@ -114,7 +122,7 @@ ul, li, a{
 
 .solutions-body li {
 	float: left; 
-	margin:0 60px;
+	/*margin:0 60px;*/
 	width: 160px;
 	height: auto;
 	/*transform: rotate(720deg);
@@ -124,12 +132,13 @@ ul, li, a{
 .solutions-body ul li i {
 	width: 150px; 
 	height: 150px; 
-	font-size: 100px; 
+	margin:20px;
+	font-size: 64px; 
 	background:#3f9fdb; 
 	border: 15px #f0f0f0 solid; 
 	text-align: center; 
 	color: #FFF; 
-	line-height: 140px; 
+	line-height: 120px; 
 	display: inline-block;
 }
 
@@ -147,4 +156,14 @@ ul, li, a{
 .solutions-way {
 	margin-top: 20px;
 	font-size: 10px;
+}
+
+.case-body {
+	width: 90%;
+	height: auto;
+	margin:20px auto;
+}
+
+.case-body img {
+	width:100%;
 }
