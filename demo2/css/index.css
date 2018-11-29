@@ -10,6 +10,11 @@ ul, li, a{
 	list-style: none;
 }
 
+.zeropPadding {
+	padding: 0;
+}
+
+
 .header {
 	width: 90%;
 	height: 80px;
@@ -161,9 +166,30 @@ ul, li, a{
 .case-body {
 	width: 90%;
 	height: auto;
-	margin:20px auto;
+	margin:0 auto;
+	margin-top:20px;
+}
+
+.case-body ul li {
+	padding: 0px;
 }
 
 .case-body img {
 	width:100%;
+}
+
+.case-problems {
+	width: 90%;
+	height: 80px;
+	background: rgb(18,138,188);
+	margin:0 auto;
+	padding: 0px;
+
+}
+
+.case-problems .more-left{
+	width: 30%;
+	height: auto;
+	margin-left: 50px;
+	float: left;
 }

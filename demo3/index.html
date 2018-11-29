@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>json demo</title>
+	<meta charset="utf-8">
+</head>
+
+<style type="text/css">
+
+.boxs {
+	width: 300px; 
+	height: 300px;
+	border: 2px solid #000;
+	background: #C0C0C0;
+	margin: auto;
+	text-align: center;
+}
+
+.item {
+	width: 300px;
+	height:auto;
+	margin: auto;
+}
+
+.item div {
+	width: 100px;
+	height: 100px;
+	background: blue;
+	margin: 0px;
+	float: left;
+	text-align: center;
+	line-height: 100px;
+	color: #FFF;
+	font-size: 50px;
+	/*border: 1px solid;*/
+}
+
+.item img {
+	width: 100px;
+	height: 100px;
+	background: blue;
+	margin: 0px;
+	float: left;
+	text-align: center;
+	line-height: 100px;
+	/*color: #FFF;*/
+	/*font-size: 50px;*/
+	/*border: 1px solid;*/
+}
+
+.item .zero {
+	width: 100px;
+	height: 100px;
+	background: #FFF;
+	margin: 0px;
+	float: left;
+}
+
+.buttons {
+	width: 500px;
+	height: 100px;
+	margin: auto;
+
+}
+
+.buttons button {
+	margin: 0px 73px;
+	width: 100px;
+	height: 50px;
+	background: rgb(18,138,188);
+}
+
+
+</style>
+
+<body>
+	
+	<!-- 3阶九宫格 -->
+	<div class="boxs">
+		<div class="item">
+			<div id="box-0" onclick="swap(0)">1</div>
+			<div id="box-1" onclick="swap(1)">2</div>
+			<div id="box-2" onclick="swap(2)">3</div>
+		</div>
+		<div class="item">
+			<div id="box-3" onclick="swap(3)">4</div>
+			<div id="box-4" onclick="swap(4)">5</div>
+			<div id="box-5" onclick="swap(5)">6</div>
+		</div>
+		<div class="item">
+			<div id="box-6" onclick="swap(6)">7</div>
+			<div id="box-7" onclick="swap(7)">8</div>
+			<div id="box-8" onclick="swap(8)"></div>
+		</div>
+	</div>
+
+	<!-- 二阶九宫格 -->
+	<!-- <div class="boxs">
+		<div class="item">
+			<div id="box-0" onclick="swap(0)">1</div>
+			<div id="box-1" onclick="swap(1)">2</div>
+		</div>
+		<div class="item">
+			<div id="box-7" onclick="swap(2)">3</div>
+			<div id="box-8" onclick="swap(3)"></div>
+		</div>
+	</div>
+
+	<div class="boxs">
+		<div class="item">
+			<img src="img/_0.jpg" id="img-0" onclick="swap(0)">
+			<img src="img/_1.jpg" id="img-1" onclick="swap(1)">
+			<img src="img/_2.jpg" id="img-2" onclick="swap(2)">
+		</div>
+		<div class="item">
+			<img src="img/_3.jpg" id="img-3" onclick="swap(3)">
+			<img src="img/_4.jpg" id="img-4" onclick="swap(4)">
+			<img src="img/_5.jpg" id="img-5" onclick="swap(5)">
+		</div>
+		<div class="item">
+			<img src="img/_6.jpg" id="img-6" onclick="swap(6)">
+			<img src="img/_7.jpg" id="img-7" onclick="swap(7)"> 
+			<img src="img/_8.jpg" id="img-8" onclick="swap(8)">
+		</div>
+	</div> -->
+	
+	<div style="width: 100%; height: 100px; margin-top: 20px;">
+		<div class="buttons">
+			<button onclick="upsetBox(9)">打乱</button>
+			<button onclick="resetBox()">还原</button>
+		</div>
+	</div>
+
+
+
+	<script type="text/javascript">
+
+	var blank = '8';
+	var nums = [0,0,0,0,0,0,0,0,0];
+	// var nums = [0,0,0,0];
+	// var blank = 3;
+	var debug = true;
+	// var LENGTH = 9;
+
+
+	//打乱顺序
+	function upsetBox(m)
+	{
+		// 顺序位置
+		
+		for (var i = 0; i < nums.length; i++) 
+		{
+			nums[i] = i+1;
+		}
+
+		for (var i = 0; i < nums.length; i++) 
+		{
+
+			//获取0-8的随机数
+			var random = Math.random()*m;
+			var floor = Math.floor(random);
+			
+			//交换位置
+			var temp;
+			temp = nums[floor];
+			nums[floor] = nums[i];
+			nums[i] = temp;
+
+		}
+
+		//赋值
+		for (var i = 0; i < nums.length; i++) 
+		{
+			//获取盒子
+			var num = document.getElementById('box-'+i);
+			if(nums[i] != 9) 
+			{
+				num.innerHTML = nums[i];
+			}
+			else 
+			{
+				num.innerHTML = '';
+				blank = i;
+			}
+			
+		}
+	}
+
+	//还原顺序
+	function resetBox() 
+	{
+		// 顺序位置
+		for (var i = 0; i < nums.length; i++) 
+		{
+			nums[i] = i+1;
+		}
+
+		//赋值
+		for (var i = 0; i < nums.length; i++) 
+		{
+			//获取盒子
+			var num = document.getElementById('box-'+i);
+			if(nums[i] != '9') 
+			{
+				num.innerHTML = nums[i];
+			}
+			else
+			{
+				num.innerHTML = '';
+				blank = i;
+			}
+		}
+	}
+
+
+	//交换位置
+	function swap(id)
+	{
+
+		//获取点击的元素
+		var num = document.getElementById('box-'+id);
+
+		//获取空格的元素
+		var kong = document.getElementById('box-'+blank);
+
+		//获取差值绝对值
+		var diff = Math.abs(id-blank);
+
+		//当空格在第一列时，判断点击的列数是否为0，1
+		var a = (blank%3 == 0) && (id%3 == 0 || id%3 == 1);
+		//当空格在第二列时
+		var b = (blank%3 == 1);
+		//当空格在第三列时，判断点击的列数是否为1，2
+		var c = (blank%3 == 2) && (id%3 == 1 || id%3 == 2);
+		//判断差值是否为1或3
+		var d = (diff == 1) || (diff == 3);
+		
+		// console.log(id)
+		// console.log(blank);
+		// console.log('id:'+id+'  blank:'+blank+"  diff:"+diff);
+		// console.log('a:'+a+'  b:'+b+'  c:'+c+'  d:'+d);
+
+		//判断点击的div是否可移动,条件：满足d同时满足a、b、c其中一项
+		if ( debug || ( (a||b||c) && d ) ) 
+		{
+			kong.innerHTML = num.innerHTML;
+			num.innerHTML = '';
+			blank = id;
+
+
+			if (isSuccess()) 
+			{
+				alert("success");
+			}
+		}
+	}
+
+	//判断是否成功
+	function isSuccess() 
+	{
+		for(var i = 0; i < nums.length-1; i++)
+		{
+			var temp = document.getElementById('box-'+i);
+			var inner = temp.innerHTML;
+
+			if (inner != i+1) 
+			{
+
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+</script>
+</body>
+</html>
