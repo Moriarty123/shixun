@@ -8,19 +8,34 @@
 <style type="text/css">
 
 .boxs {
-	width: 300px; 
-	height: 300px;
+	/*width: 250px; 
+	height: 250px;*/
+	width: 350px; 
+	height: 350px;
+	/*width: 450px; 
+	height: 450px;*/
 	border: 2px solid #000;
 	background: #C0C0C0;
-	margin: auto;
+	margin: 50px auto;
 	text-align: center;
+	/*vertical-align: middle;*/
 }
 
+.boxitems {	
+	/*margin:2% auto; */
+	margin-top: 20px;
+}
+
+
 .item {
-	width: 300px;
+	display: inline-block;
+	/*width: 400px;*/
+	height: 400px;
+	line-height: 400px;
 	height:auto;
 	margin: auto;
 }
+
 
 .item div {
 	width: 100px;
@@ -32,7 +47,7 @@
 	line-height: 100px;
 	color: #FFF;
 	font-size: 50px;
-	/*border: 1px solid;*/
+	border: 1px solid;
 }
 
 .item img {
@@ -43,29 +58,21 @@
 	float: left;
 	text-align: center;
 	line-height: 100px;
-	/*color: #FFF;*/
-	/*font-size: 50px;*/
-	/*border: 1px solid;*/
-}
-
-.item .zero {
-	width: 100px;
-	height: 100px;
-	background: #FFF;
-	margin: 0px;
-	float: left;
+	color: #FFF;
+	font-size: 50px;
+	border: 1px solid;
 }
 
 .buttons {
-	width: 500px;
+	width: 400px;
 	height: 100px;
 	margin: auto;
-
+	display: block;
 }
 
 .buttons button {
-	margin: 0px 73px;
-	width: 100px;
+	margin: 0px 20px;
+	width: 80px;
 	height: 50px;
 	background: rgb(18,138,188);
 }
@@ -76,90 +83,150 @@
 <body>
 	
 	<!-- 3阶九宫格 -->
-	<div class="boxs">
-		<div class="item">
-			<div id="box-0" onclick="swap(0)">1</div>
-			<div id="box-1" onclick="swap(1)">2</div>
-			<div id="box-2" onclick="swap(2)">3</div>
-		</div>
-		<div class="item">
-			<div id="box-3" onclick="swap(3)">4</div>
-			<div id="box-4" onclick="swap(4)">5</div>
-			<div id="box-5" onclick="swap(5)">6</div>
-		</div>
-		<div class="item">
-			<div id="box-6" onclick="swap(6)">7</div>
-			<div id="box-7" onclick="swap(7)">8</div>
-			<div id="box-8" onclick="swap(8)"></div>
-		</div>
-	</div>
-
-	<!-- 二阶九宫格 -->
 	<!-- <div class="boxs">
-		<div class="item">
-			<div id="box-0" onclick="swap(0)">1</div>
-			<div id="box-1" onclick="swap(1)">2</div>
-		</div>
-		<div class="item">
-			<div id="box-7" onclick="swap(2)">3</div>
-			<div id="box-8" onclick="swap(3)"></div>
-		</div>
-	</div>
-
-	<div class="boxs">
-		<div class="item">
-			<img src="img/_0.jpg" id="img-0" onclick="swap(0)">
-			<img src="img/_1.jpg" id="img-1" onclick="swap(1)">
-			<img src="img/_2.jpg" id="img-2" onclick="swap(2)">
-		</div>
-		<div class="item">
-			<img src="img/_3.jpg" id="img-3" onclick="swap(3)">
-			<img src="img/_4.jpg" id="img-4" onclick="swap(4)">
-			<img src="img/_5.jpg" id="img-5" onclick="swap(5)">
-		</div>
-		<div class="item">
-			<img src="img/_6.jpg" id="img-6" onclick="swap(6)">
-			<img src="img/_7.jpg" id="img-7" onclick="swap(7)"> 
-			<img src="img/_8.jpg" id="img-8" onclick="swap(8)">
+		<div class="boxitems">
+			<div class="item">
+				<div id="box-0" onclick="swap(0)">1</div>
+				<div id="box-1" onclick="swap(1)">2</div>
+				<div id="box-2" onclick="swap(2)">3</div>
+			</div>
+			<div class="item">
+				<div id="box-3" onclick="swap(3)">4</div>
+				<div id="box-4" onclick="swap(4)">5</div>
+				<div id="box-5" onclick="swap(5)">6</div>
+			</div>
+			<div class="item">
+				<div id="box-6" onclick="swap(6)">7</div>
+				<div id="box-7" onclick="swap(7)">8</div>
+				<div id="box-8" onclick="swap(8)"></div>
+			</div>
 		</div>
 	</div> -->
-	
-	<div style="width: 100%; height: 100px; margin-top: 20px;">
-		<div class="buttons">
-			<button onclick="upsetBox(9)">打乱</button>
-			<button onclick="resetBox()">还原</button>
+
+	<!-- 2阶九宫格 -->
+	<!-- <div class="boxs">
+		<div class="boxitems">
+		<div class="item">
+			<div id="box-0" onclick="swap(0)">1</div>
+			<div id="box-1" onclick="swap(1)">2</div>
 		</div>
-	</div>
+		<div class="item">
+			<div id="box-2" onclick="swap(2)">3</div>
+			<div id="box-3" onclick="swap(3)"></div>
+		</div>
+		</div>
+	</div> -->
+
+	<!-- 4阶九宫格 -->
+	<!-- <div class="boxs">
+		<div class="boxitems">
+			<div class="item">
+				<div id="box-0" onclick="swap(0)">1</div>
+				<div id="box-1" onclick="swap(1)">2</div>
+				<div id="box-2" onclick="swap(2)">3</div>
+				<div id="box-3" onclick="swap(3)">4</div>
+			</div>
+			<div class="item">
+				<div id="box-4" onclick="swap(4)">5</div>
+				<div id="box-5" onclick="swap(5)">6</div>
+				<div id="box-6" onclick="swap(6)">7</div>
+				<div id="box-7" onclick="swap(7)">8</div>
+			</div>
+			<div class="item">
+				<div id="box-8" onclick="swap(8)">9</div>
+				<div id="box-9" onclick="swap(9)">10</div>
+				<div id="box-10" onclick="swap(10)">11</div>
+				<div id="box-11" onclick="swap(11)">12</div>
+			</div>
+			<div class="item">
+				<div id="box-12" onclick="swap(12)">13</div>
+				<div id="box-13" onclick="swap(13)">14</div>
+				<div id="box-14" onclick="swap(14)">15</div>
+				<div id="box-15" onclick="swap(15)"></div>
+			</div>
+		</div>
+	</div> -->
+
+	<div class="boxs">
+		<div class="boxitems">
+		<div class="item">
+				<div id="box-0" onclick="swap(0)" name='1'><img src="img/_0.jpg"></div>
+				<div id="box-1" onclick="swap(1)" name='2'><img src="img/_1.jpg"></div>
+				<div id="box-2" onclick="swap(2)" name='3'><img src="img/_2.jpg"></div>
+			</div>
+			<div class="item">
+				<div id="box-3" onclick="swap(3)" name='4'><img src="img/_3.jpg"></div>
+				<div id="box-4" onclick="swap(4)" name='5'><img src="img/_4.jpg"></div>
+				<div id="box-5" onclick="swap(5)" name='6'><img src="img/_5.jpg"></div>
+			</div>
+			<div class="item">
+				<div id="box-6" onclick="swap(6)" name='7'><img src="img/_6.jpg"></div>
+				<div id="box-7" onclick="swap(7)" name='8'><img src="img/_7.jpg"></div> 
+				<div id="box-8" onclick="swap(8)" name='9'></div>
+			</div>
+		</div>
+		</div>
+
+		<div style="width: 100%; height: 100px; margin-top: 20px;">
+			<div class="buttons">
+				<button onclick="upsetBox2(8)">打乱</button>
+				<button onclick="startTimeout()" id="start">开始</button>
+				<button onclick="resetBox2()">还原</button>
+			</div>
+		</div>
 
 
 
-	<script type="text/javascript">
+		<script type="text/javascript">
 
+
+	//修改blank不显示最后一个方块值
+	//修改nums显示方块值
 	var blank = '8';
-	var nums = [0,0,0,0,0,0,0,0,0];
-	// var nums = [0,0,0,0];
+	var nums = [1,2,3,4,5,6,7,8,9];
+	// var nums = [1,2,3,4];
 	// var blank = 3;
-	var debug = true;
+	// var nums = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
+	// var blank = 15;
+
+
+	var imgs = [
+	'<img src="img/_0.jpg">',
+	'<img src="img/_1.jpg">',
+	'<img src="img/_2.jpg">',
+	'<img src="img/_3.jpg">',
+	'<img src="img/_4.jpg">',
+	'<img src="img/_5.jpg">',
+	'<img src="img/_6.jpg">',
+	'<img src="img/_7.jpg">',
+	'<img src="img/_8.jpg">'
+	];
+
+	var debug = false;
+	var t = 0;
+	var count = 0;
 	// var LENGTH = 9;
+
+	function startTimeout() 
+	{
+		document.getElementById('start').innerHTML = count;
+		count = count + 1;
+		t=setTimeout("startTimeout()",1000);
+	}
 
 
 	//打乱顺序
 	function upsetBox(m)
 	{
-		// 顺序位置
 		
 		for (var i = 0; i < nums.length; i++) 
 		{
-			nums[i] = i+1;
-		}
 
-		for (var i = 0; i < nums.length; i++) 
-		{
-
-			//获取0-8的随机数
+			//获取0-m的随机数
 			var random = Math.random()*m;
 			var floor = Math.floor(random);
-			
+			// console.log(floor);
+
 			//交换位置
 			var temp;
 			temp = nums[floor];
@@ -168,14 +235,59 @@
 
 		}
 
+		// console.log(nums);
+
 		//赋值
 		for (var i = 0; i < nums.length; i++) 
 		{
 			//获取盒子
 			var num = document.getElementById('box-'+i);
-			if(nums[i] != 9) 
+			// console.log(num);
+			if(nums[i] != nums.length) 
 			{
+				console.log(num.innerHTML);
 				num.innerHTML = nums[i];
+			}
+			else 
+			{
+				num.innerHTML = '';
+				blank = i;
+			}
+			
+		}
+	}
+
+	function upsetBox2(m)
+	{
+		
+		for (var i = 0; i < nums.length; i++) 
+		{
+
+			//获取0-m的随机数
+			var random = Math.random()*m;
+			var floor = Math.floor(random);
+			// console.log(floor);
+
+			//交换位置
+			var temp;
+			temp = nums[floor];
+			nums[floor] = nums[i];
+			nums[i] = temp;
+
+		}
+
+		// console.log(nums);
+
+		//赋值
+		for (var i = 0; i < nums.length; i++) 
+		{
+			//获取盒子
+			var num = document.getElementById('box-'+i);
+			// console.log(num);
+			if(nums[i] != nums.length) 
+			{
+				// console.log(num);
+				num.innerHTML = imgs[nums[i]-1];
 			}
 			else 
 			{
@@ -200,9 +312,36 @@
 		{
 			//获取盒子
 			var num = document.getElementById('box-'+i);
-			if(nums[i] != '9') 
+			if(nums[i] != nums.length) 
 			{
 				num.innerHTML = nums[i];
+			}
+			else
+			{
+				num.innerHTML = '';
+				blank = i;
+			}
+		}
+	}
+
+	//还原顺序
+	function resetBox2(m) 
+	{
+		// 顺序位置
+		for (var i = 0; i < nums.length; i++) 
+		{
+			nums[i] = i+1;
+		}
+
+		// console.log(nums);
+		//赋值
+		for (var i = 0; i < nums.length; i++) 
+		{
+			//获取盒子
+			var num = document.getElementById('box-'+i);
+			if(nums[i] != nums.length) 
+			{
+				num.innerHTML = imgs[nums[i]-1];
 			}
 			else
 			{
@@ -248,9 +387,10 @@
 			blank = id;
 
 
-			if (isSuccess()) 
+			if (isSuccess2()) 
 			{
-				alert("success");
+				alert("所用时间：" + count + "秒");
+				count = 0;
 			}
 		}
 	}
@@ -264,6 +404,28 @@
 			var inner = temp.innerHTML;
 
 			if (inner != i+1) 
+			{
+
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+	//判断是否成功
+	function isSuccess2() 
+	{
+		for(var i = 0; i < nums.length-1; i++)
+		{
+			var temp = document.getElementById('box-'+i);
+			var inner = temp.innerHTML;
+
+			var img = '<img src="img/_'+i+'.jpg">';
+			// console.log(img);
+			// console.log(inner);
+
+			if (inner != img) 
 			{
 
 				return false;
