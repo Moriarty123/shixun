@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo4 表单</title>
+	<meta charset="utf-8">
+
+	<style type="text/css">
+
+	* {
+		margin: 0px;
+		padding: 0px;
+	}
+
+	div {
+		margin: 0 auto;
+		/*float: left;*/
+	}
+
+	.fe-border {
+		/*border: 1px solid red;*/
+	}
+
+
+	.fe-form {
+		width: 1000px;
+		height: 1000px;
+		margin:0px auto;
+	}
+
+
+
+	.fe-block-wrap {
+		width: 1000px;height: auto;margin-top: 10px;margin-bottom: 5px;
+	}
+
+	.fe-block-wrap-title {
+		width: 80px; height: 30px; margin-bottom: 10px; margin-left: 60px;
+	}
+
+	.fe-bolck-wrap-body {
+		width: 90%; height: 30px; padding-left: 20px; padding-top:5px; margin-bottom: 5px;
+	}
+
+	.fe-input-abroadBorder {
+		float: left; border: 1px solid rgba(18,138,188,0.5); border-radius: 5px; margin-right: 20px; 
+	}
+
+	.fe-input-withinBorder {
+		width: 80px; border: 0; margin: 0 5px;
+	}
+
+</style>
+
+
+</head>
+<body>
+	
+	<div>
+		<form class="fe-form fe-border">
+			<!-- 类别 -->
+
+			<div class="fe-border fe-block-wrap" >
+
+				<div class="fe-border fe-block-wrap-title">
+					<span><h4 style="float: right;">类别</h4></span>
+				</div>
+				<div class="fe-border fe-bolck-wrap-body">
+					<span><font style="color: red">*</font></span>&nbsp;出租方式：
+					<label><input type="radio" name="chuzu" checked="checked" value="整套出租" onchange="showMessage(this);" />整套出租</label>
+					<label><input type="radio" name="chuzu" value="单间出租" onchange="showMessage(this);"/>单间出租</label>
+				</div>
+
+			</div>
+
+
+			<!-- 基础信息 -->
+
+			<div class="fe-border fe-block-wrap">
+
+				<div class="fe-border fe-block-wrap-title">
+					<span><h4 style="float: right;">基础信息</h4></span>
+				</div>
+
+				<div class="fe-border fe-bolck-wrap-body">
+					<span><font style="color: red">*</font></span>&nbsp;小区名称：
+					<input type="text" name="" value="请选择小区" style="width: 400px;" onchange="showMessage(this);">
+				</div>
+
+				
+				<div class="fe-border fe-bolck-wrap-body">
+					<!-- <span><font style="color: red">*</font></span>&nbsp;房屋类型： -->
+					<div style="width: 100px; float: left;">
+						<span><font style="color: red">*</font></span>&nbsp;房屋类型：
+					</div>
+					<div style="width: 600px; float: left;" class="fe-border">
+						<div class="fe-input-abroadBorder">
+							<input type="text" name="" value="" class="fe-input-withinBorder">
+							<span>室</span>
+						</div>
+						<div class="fe-input-abroadBorder">
+							<input type="text" name="" value="" class="fe-input-withinBorder">
+							<span>厅</span>
+						</div>
+						<div class="fe-input-abroadBorder">
+							<input type="text" name="" value="" class="fe-input-withinBorder">
+							<span>卫</span>
+						</div>
+
+						<div class="fe-input-abroadBorder">
+							<span>共</span>
+							<input type="text" name="" value="" class="fe-input-withinBorder">
+							<span>平方</span>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="fe-border fe-bolck-wrap-body">
+					<div style="width: 100px; float: left;">
+						<span><font style="color: red">*</font></span>&nbsp;房屋朝向：
+					</div>
+					<div style="width: 600px; float: left;" class="fe-border">
+						<div class="fe-input-abroadBorder">
+							<select onchange="showMessage(this)">
+								<option value="">请选择朝向</option>
+								<option value="东">东</option>
+								<option value="西">西</option>
+								<option value="南">南</option>
+								<option value="北">北</option>
+							</select>
+						</div>
+						<div class="fe-input-abroadBorder">
+							<span>第</span>
+							<input type="text" name="" value="" class="fe-input-withinBorder">
+							<span>层</span>
+						</div>
+						
+
+					</div>
+				</div>
+
+				<div class="fe-border fe-bolck-wrap-body">
+					<div style="width: 100px; float: left;">
+						<span><font style="color: red">*</font></span>&nbsp;包含部分：
+					</div>
+					<div style="width: 600px; float: left;" class="fe-border">
+						
+						<label><input name="feiyong" type="checkbox" value="水费" onchange="showFeiYong(this);" />水费 </label>
+						<label><input name="feiyong" type="checkbox" value="电费" onchange="showFeiYong(this);"/>电费 </label>
+						<label><input name="feiyong" type="checkbox" value="物业费" onchange="showFeiYong(this);"/>物业费 </label>
+						<label><input name="feiyong" type="checkbox" value="停车费" onchange="showFeiYong(this);"/>停车费 </label>
+						
+						
+
+
+					</div>
+				</div>
+
+
+			</div>
+
+			<!-- 详细信息 -->
+
+			<!-- 其他信息 -->
+
+
+		</form>
+
+	</div>
+
+<script type="text/javascript">
+
+function showMessage(obj) {
+	alert(obj.value);
+}
+
+var FeiYong = new Array();
+function showFeiYong(obj) {
+	
+	for(var temp in FeiYong)
+	{
+		if(temp == obj.value) 
+		{
+			return;
+		}
+	}
+	console.log(FeiYong);
+	FeiYong.push(obj.value);
+
+	alert(FeiYong);
+}
+
+
+
+</script>
+
+
+</body>
+</html>
