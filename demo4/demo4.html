@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo4 运动</title>
+</head>
+<body>
+
+	<div style="width: 500px; height: 500px; background: #000; margin: 0 auto;position: relative; left: 0; top: 0;">
+		<div id="div1" style="width: 20px; height: 20px; background: red; border-radius: 100%; position:  absolute; "></div>
+	</div>
+	
+<script type="text/javascript">
+	
+	var div1 = document.getElementById('div1');
+	var width = div1.style.width;
+	var height = div1.style.height;
+	var marginLeft = 0;
+	var marginTop = 0;
+	var parent = div1.parentNode;
+	// console.log(parent);
+	var maxwidth = parent.style.width;
+	var maxheight = parent.style.height
+	console.log(maxwidth-'px');
+	console.log(maxheight);
+	// var Left = 0;
+	// var Top = 0;
+	var time = 0;
+	var temp = 10.8;
+	var temp2 = 5.7;
+
+	function move() 
+	{
+		// left += 1;
+		// top += 1;
+
+		// time += 0.05;
+
+		// Left = 10 * time;
+		// Top = time*time * 0.5 * 9.8;
+
+
+		// console.log(Left);
+		// console.log(Top);
+		// console.log(time);
+		// console.log(time*time * 0.5 * 9.8);
+		// div1.style.left = Left+'px';
+		// div1.style.top = Top+'px';
+		// 
+		
+		marginLeft += temp;
+		marginTop += temp2;
+
+		// console.log(marginLeft);
+		// console.log(marginTop);
+
+		// if (marginLeft < 0 || marginLeft >= maxwidth-width) {
+		// 	temp *= -1;
+		// }
+
+		// if (marginTop < 0 || marginTop >= maxheight - height) {
+		// 	temp2 *= -1;
+		// }
+		// 
+		if (marginLeft < 0 || marginLeft >= 450) {
+			temp *= -1;
+		}
+
+		if (marginTop < 0 || marginTop >= 450) {
+			temp2 *= -1;
+		}
+
+		div1.style.marginLeft = marginLeft+'px';
+		div1.style.marginTop = marginTop+'px';
+
+
+	}
+
+	// move();
+	setInterval(function() {
+		move();
+	}, 20);
+
+</script>
+
+
+</body>
+</html>
