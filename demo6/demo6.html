@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo6</title>
+
+	<link rel="stylesheet" type="text/css" href="css/demo6.css">
+
+</head>
+<body>
+
+	<div class="container">
+		<div id="playBox">
+
+		</div>
+		<div class='tip'>
+			<span id="count">当前分数：</span>
+			<span id="chance">剩余次数：</span>
+		</div>
+	</div>
+	
+
+<script type="text/javascript">
+	var playBox = document.getElementById('playBox');
+	// var marginTop = 0;
+	var zimu = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+	var book = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+	var appleKey = []; 
+	// var apple;
+	var appleTree = [];
+	var appleMarginTop = [];
+
+	var count = 0;
+	var chance = 3;
+	// 创建苹果
+	function createApple() 
+	{
+		var apple = document.createElement('div');
+
+		apple.style.width = '30px';
+		apple.style.height = '30px';
+		apple.style.position = 'absolute';
+		apple.style.border = '1px solid red';
+		apple.style.lineHeight = '30px';
+		apple.style.textAlign = 'center';
+
+		var zimuRandom = Math.floor( Math.random() * 26 );
+		// var flag = false;
+		// while(!flag) 
+		// {
+		// 	if(zimu[zimuRandom] in appleKey) 
+		// 	{
+		// 		zimuRandom = Math.floor( Math.random() * 26 );
+		// 	}
+		// 	else
+		// 	{
+		// 		flag = true;
+		// 	}
+		// }
+		// 
+		// var flag = false;
+		// while(book[zimuRandom] == 1) 
+		// {
+		// 	zimuRandom = zimuRandom = Math.floor( Math.random() * 26 );
+		// }
+		// 
+		// 
+
+		apple.innerHTML = zimu[zimuRandom];
+		appleKey.push(zimu[zimuRandom]);
+		book[zimuRandom] = 1;
+
+		var marginLeft = Math.floor( Math.random() * 555 + 5);
+		// console.log(marginLeft);
+		apple.style.marginLeft = marginLeft + 'px';
+		apple.style.marginTop = 0+'px';
+		playBox.appendChild(apple);
+
+		return apple;
+	}
+	
+	// 随机位置掉落
+	function dropApple() 
+	{
+		// marginTop++;
+		// apple.style.marginTop = marginTop + 'px';
+
+		for(var i = 0; i < appleTree.length; i++) 
+		{
+			var appleTop = appleMarginTop[i];
+			var apple = appleTree[i];
+
+
+
+			appleTop++;
+
+			if (appleTop >= 570) 
+			{
+				// console.log(i);
+				// playBox.removeChild(appleTree[i]);
+				// appleTree.splice(i, 1);
+				// appleMarginTop.splice(i, 1);
+				// appleKey.splice(i, 1);
+				removeApple(i);
+				chance--;
+				break;
+			}
+
+			appleMarginTop[i] = appleTop;
+			apple.style.marginTop = appleTop + 'px';
+		}
+
+	}
+
+	//删除苹果
+	function removeApple(i) {
+		playBox.removeChild(appleTree[i]);
+		appleTree.splice(i, 1);
+		appleMarginTop.splice(i, 1);
+		appleKey.splice(i, 1);
+		book[i] = 0;
+	}
+
+	// var apple = createApple();
+	// apple.style.marginTop = marginTop;
+
+	// console.log(apple);
+
+	//掉落苹果
+	// setInterval(function() {
+	// 	dropApple(apple);
+	// },20);
+
+	//每秒创建苹果
+	setInterval(function() {
+		var apple = createApple();
+		// console.log(apple);
+		appleTree.push(apple);
+		appleMarginTop.push(0);
+		// console.log(appleTree);
+	}, 1000);
+
+	// 每次掉落1px
+	setInterval(function() {
+		dropApple();
+	},20);
+
+	document.onkeydown = function(e) {
+		var e = event || window.event;
+		// console.log(e);
+		var keyCode = e.key;
+		keyCode = keyCode.toUpperCase();
+		// console.log(keyCode);
+		// console.log(appleKey);
+
+		for(var i = 0; i < appleKey.length; i++) 
+		{
+			if (appleKey[i] == keyCode) 
+			{
+
+				removeApple(i);
+				count++;
+				break;
+			}
+		}
+	}
+
+	setInterval(function() {
+		var countSpan = document.getElementById('count');
+		console.log(count);
+		countSpan.innerHTML = '当前分数：' + count;
+		var chanceSpan = document.getElementById('chance');
+		chanceSpan.innerHTML = '剩余次数：' + chance;
+	}, 1000);
+
+</script>
+
+
+</body>
+</html>
