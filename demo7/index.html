@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>demo7 index</title>
+	<meta charset="utf-8">
+
+	<style type="text/css">
+
+	.box img {
+		width: 600px;
+		height: 300px;
+		float: left;
+	}
+
+</style>
+</head>
+<body>
+
+	<div style="width: 600px; height: border:1px solid red; margin:0 auto; overflow: hidden;" class="container">
+		<div style="width: 300%; height: 300px; border: 1px solid red; margin: 0 auto;" class="box" id="imgs">
+			<img src="img/hw_bg1.png">
+			<img src="img/hw_bg2.png">
+			<img src="img/hw_bg3.png">
+
+		</div>
+
+
+		<div>
+			<button id="button1" style="float: left;">上一张</button>
+			<button id="button2" style="float: right;">下一张</button>
+
+		</div>
+	</div>
+
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript">
+
+		var move = 0;
+		$('#button1').click(function() {
+				move += 600;
+				console.log(move);
+				if (move > 0) {move = -1200;}
+				console.log(move);
+				$('#imgs').animate({
+					'margin-left':move + 'px'
+				}, 1000, function() {
+
+			});
+		});
+
+		$('#button2').click(function() {
+				move -= 600;
+				console.log(move);
+				if (move < -1200) {move = 0;}
+				console.log(move);
+				$('#imgs').animate({
+					'margin-left':move + 'px'
+				}, 1000, function() {
+
+			});
+		});
+
+
+	</script>
+
+</body>
+</html>

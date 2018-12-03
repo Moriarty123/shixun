@@ -37,41 +37,14 @@
 	{
 		var apple = document.createElement('div');
 
-		apple.style.width = '30px';
-		apple.style.height = '30px';
-		apple.style.position = 'absolute';
-		apple.style.border = '1px solid red';
-		apple.style.lineHeight = '30px';
-		apple.style.textAlign = 'center';
-
 		var zimuRandom = Math.floor( Math.random() * 26 );
-		// var flag = false;
-		// while(!flag) 
-		// {
-		// 	if(zimu[zimuRandom] in appleKey) 
-		// 	{
-		// 		zimuRandom = Math.floor( Math.random() * 26 );
-		// 	}
-		// 	else
-		// 	{
-		// 		flag = true;
-		// 	}
-		// }
-		// 
-		// var flag = false;
-		// while(book[zimuRandom] == 1) 
-		// {
-		// 	zimuRandom = zimuRandom = Math.floor( Math.random() * 26 );
-		// }
-		// 
-		// 
+
 
 		apple.innerHTML = zimu[zimuRandom];
 		appleKey.push(zimu[zimuRandom]);
 		book[zimuRandom] = 1;
 
 		var marginLeft = Math.floor( Math.random() * 555 + 5);
-		// console.log(marginLeft);
 		apple.style.marginLeft = marginLeft + 'px';
 		apple.style.marginTop = 0+'px';
 		playBox.appendChild(apple);
@@ -82,8 +55,6 @@
 	// 随机位置掉落
 	function dropApple() 
 	{
-		// marginTop++;
-		// apple.style.marginTop = marginTop + 'px';
 
 		for(var i = 0; i < appleTree.length; i++) 
 		{
@@ -94,13 +65,9 @@
 
 			appleTop++;
 
-			if (appleTop >= 570) 
+			if (appleTop >= 520) 
 			{
-				// console.log(i);
-				// playBox.removeChild(appleTree[i]);
-				// appleTree.splice(i, 1);
-				// appleMarginTop.splice(i, 1);
-				// appleKey.splice(i, 1);
+
 				removeApple(i);
 				chance--;
 				break;
@@ -121,23 +88,15 @@
 		book[i] = 0;
 	}
 
-	// var apple = createApple();
-	// apple.style.marginTop = marginTop;
-
-	// console.log(apple);
-
-	//掉落苹果
-	// setInterval(function() {
-	// 	dropApple(apple);
-	// },20);
 
 	//每秒创建苹果
 	setInterval(function() {
 		var apple = createApple();
-		// console.log(apple);
+
+		apple.style.backgroundImage = 'url("img/apple.jpg")';
 		appleTree.push(apple);
 		appleMarginTop.push(0);
-		// console.log(appleTree);
+
 	}, 1000);
 
 	// 每次掉落1px
@@ -145,13 +104,13 @@
 		dropApple();
 	},20);
 
+	//键盘点击事件
 	document.onkeydown = function(e) {
 		var e = event || window.event;
-		// console.log(e);
+
 		var keyCode = e.key;
 		keyCode = keyCode.toUpperCase();
-		// console.log(keyCode);
-		// console.log(appleKey);
+
 
 		for(var i = 0; i < appleKey.length; i++) 
 		{
@@ -165,9 +124,10 @@
 		}
 	}
 
+	//分数统计
 	setInterval(function() {
 		var countSpan = document.getElementById('count');
-		console.log(count);
+
 		countSpan.innerHTML = '当前分数：' + count;
 		var chanceSpan = document.getElementById('chance');
 		chanceSpan.innerHTML = '剩余次数：' + chance;
