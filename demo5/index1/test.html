@@ -1,0 +1,28 @@
+<!-- test.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+</head>
+<body>
+	<div style="width: 100px; height: 100px; background: red" onclick="value();"></div>
+
+	<script type="text/javascript">
+		
+		function value() {
+			var temp = Math.random()*3000;
+			while (temp < 2500) {
+				temp = Math.random()*3000;
+			}
+			var p = Math.floor(temp);
+			console.log(p);
+			for(var i = 0; i < 50; i++) {
+				var res = p-(i-50)*(i-50);
+				console.log(Math.floor(res));
+			}
+		}
+
+	</script>
+</body>
+</html>
