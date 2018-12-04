@@ -160,13 +160,13 @@
 			move -= 600;
 			console.log(move);
 			//返回第一张
-			if (move > 1800) {
+			if (move < 0) {
 				$('#imgs').animate({
-					'margin-left':'0px'
+					'margin-left':'-1200px'
 				},0,function() {
 
 				});
-				move = 0;
+				move = 1200;
 			}
 
 			//跳转到下一张
