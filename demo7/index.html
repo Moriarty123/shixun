@@ -18,7 +18,7 @@
 		.container {
 			width: 600px; 
 			height: 300px;
-	/* 		border:1px solid red;  */
+			/* 		border:1px solid red;  */
 			margin:0 auto; 
 			overflow: hidden; 
 			position:relative;
@@ -54,38 +54,45 @@
 			opacity: 0.5;
 		}
 
+		button {
+			width: 100px;
+			height: 50px;
+			color: #000;
+		}
+
 	</style>
-	</head>
-	<body>
+</head>
+<body>
 
-		<div class="container">
-			<div class="box" id="imgs">
-				<img src="img/hw_bg1.png">
-				<img src="img/hw_bg2.png">
-				<img src="img/hw_bg3.png">
-				<img src="img/hw_bg1.png">
-
-
-			</div>
-
-			<div class="img-nav">
-				<a href="#">1</a>
-				<a href="#">2</a>
-				<a href="#">3</a>
-			</div>
+	<div class="container">
+		<div class="box" id="imgs">
+			<img src="img/hw_bg1.png">
+			<img src="img/hw_bg2.png">
+			<img src="img/hw_bg3.png">
+			<img src="img/hw_bg1.png">
 
 
-			<!-- <div>
-				<button id="button1" style="float: left;">上一张</button>
-				<button id="button2" style="float: right;">下一张</button>
-
-			</div> -->
 		</div>
 
-		<script type="text/javascript" src="js/jquery.min.js"></script>
-		<script type="text/javascript">
+		<div class="img-nav">
+			<a href="#">1</a>
+			<a href="#">2</a>
+			<a href="#">3</a>
+		</div>
 
-			var move = 0;
+
+
+	</div>
+	<div class="container">
+		<button id="button1" style="float: left;">上一张</button>
+		<button id="button2" style="float: right;">下一张</button>
+
+	</div>
+
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript">
+
+		var move = 0;
 
 
 		function imgMove() {
@@ -119,7 +126,6 @@
 		//跳转到指定图片
 		$('.img-nav a').click(function() {
 			var num = this.innerHTML;
-	// 		console.log(num);
 
 			move = num * 600 - 600;
 
@@ -128,7 +134,74 @@
 			},1000);
 		});
 
-	</script>
 
-	</body>
-	</html>
+		// $('#button1').blid('click') {
+		// 	move += 600;
+
+		// 	//返回第一张
+		// 	if (move > 1800) {
+		// 		$('#imgs').animate({
+		// 			'margin-left':'0px'
+		// 		},0,function() {
+
+		// 		});
+		// 		move = 0;
+		// 	}
+
+		// 	//跳转到下一张
+		// 	$('#imgs').animate({
+		// 		'margin-left':'-' + move + 'px'
+		// 	},1000,function() {
+
+		// 	});
+		// };
+
+		$('#button1').bind('click', function() {
+			move -= 600;
+			console.log(move);
+			//返回第一张
+			if (move > 1800) {
+				$('#imgs').animate({
+					'margin-left':'0px'
+				},0,function() {
+
+				});
+				move = 0;
+			}
+
+			//跳转到下一张
+			$('#imgs').animate({
+				'margin-left':'-' + move + 'px'
+			},1000,function() {
+
+			});
+		});
+
+
+		$('#button2').bind('click', function() {
+			move += 600;
+			console.log(move);
+			//返回第一张
+			if (move > 1800) {
+				$('#imgs').animate({
+					'margin-left':'0px'
+				},0,function() {
+
+				});
+				move = 0;
+			}
+
+			//跳转到下一张
+			$('#imgs').animate({
+				'margin-left':'-' + move + 'px'
+			},1000,function() {
+
+			});
+		});
+		
+
+
+</script>
+
+</body>
+</html>
