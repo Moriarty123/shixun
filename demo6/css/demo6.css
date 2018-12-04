@@ -27,7 +27,8 @@
 	width:30px;
 	height:30px;
 	position:absolute;
-	background-image: url('img/apple.jpg');
+	/*background-image: url(../img/apple.png);*/
+
 	border:1px solid red;
 	line-height: 30px;
 	text-align: center;
